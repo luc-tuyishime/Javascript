@@ -15,4 +15,4 @@ const EachkidGet = Math.floor(bombom / kids);
 console.log(`Each kids gets ${EachkidGet} bomboms`);
 
 const dadGets = bombom % kids;
-console.log(`Dad gets ${dadGets} bomboms`);
+console.log(`Dad gets ${dadGets} bomboms`); 
