@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Closures</title>
+</head>
+
+<body>
+    <script>
+        // Closure is the ability to access the parent level scope from a child scope event after the function have been called or closed
+        function outer() {
+            const outerVar = 'Hey i am the outer';
+            return function inner() {
+                const innerVar = 'hey i am the inner';
+                console.log(innerVar);
+                console.log(outerVar);
+            }
+        }
+
+        const newcc = outer();
+        newcc();
+
+        function createGame(gameName) {
+            let score = 0;  // Outer scope
+            return function win() {
+                score++;
+                return `Your name ${gameName} score is ${score}`;
+            }
+        }
+
+        const hockeyGame = createGame('hockey');
+        const football = createGame('football');
+    </script>
+</body>
+
+</html>
