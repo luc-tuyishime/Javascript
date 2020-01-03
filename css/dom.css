@@ -1,0 +1,24 @@
+.img-luc {
+    height: 400px;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+
+.round {
+    height: 290px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transform: rotate(1turn) scale(2);
+    -webkit-transform: rotate(1turn) scale(2);
+    -moz-transform: rotate(1turn) scale(2);
+    -ms-transform: rotate(1turn) scale(2);
+    -o-transform: rotate(1turn) scale(2);
+    box-shadow: 0 0 0 10px black;
+}
