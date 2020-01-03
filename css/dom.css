@@ -1,3 +1,7 @@
+body {
+    background-color: lightgrey;
+}
+
 .img-luc {
     height: 400px;
     transition: all 0.2s;
