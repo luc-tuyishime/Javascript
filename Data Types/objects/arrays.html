@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrays</title>
+</head>
+
+<body>
+    <script>
+        const name = ['pierre', 'luc', 'blaise']
+        console.log(name[name.length - 1]) // get the last name in array.
+        name.push('vivi');
+        console.log(name);
+        const name2 = ['ovoxo', ...name]; // Add ovoxo in the array of name
+        console.log(name2);
+
+        console.log('/////////// NEW LINE ///////////');
+        // ADD ITEM IN THE MIDDLE OF ARRAY
+        const players = ['messi', 'dinho', 'lukaku', 'robinho'];
+        const newPlayers = [
+            ...players.slice(0, 2), // starting from 0 and after 'messi' and 'dinho'
+            'mbappe', // add 'mbappe'
+            ...players.slice(3)
+        ]
+        console.log(newPlayers);
+
+        // REMODE THIRD ITEM IN THE SECOND POSITION 
+        const newPlayers2 = [
+            ...newPlayers.slice(0, 3), // from 0 to the 2nd but ignore the 3rd
+            ...newPlayers.slice(4)
+        ]
+        console.log('NEW PLAYERS ===>>', newPlayers2);
+
+
+        console.log('//////////// NEW LINE ////////////');
+        const comments = [
+            { text: 'loo', id: 1 },
+            { text: 'we here', id: 2 },
+            { text: 'meek mill', id: 3 },
+            { text: 'drake', id: 4 },
+            { text: 'brown', id: 5 },
+            { text: 'migos', id: 6 }
+        ]
+
+        function deleteComment(id, comment) {
+            // FIND INDEX OF ITEM IN ARRAY
+            const commnentIndex = comments.findIndex(comment => comment.id === id);
+            // MAKE NEW ARRAY WITHOUT THAT ITEM IN IT
+            return [
+                ...comments.slice(0, commnentIndex),
+                ...comments.slice(commnentIndex + 1)
+            ]
+            // RETURN A NEW ARRAY
+        }
+
+        console.log("///////////// NEW LINE ///////////");
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        console.log(numbers);
+        numbers.splice(3, 2); // starting form 3 remove the 2 next numbers (4, 5);
+        console.log(numbers);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intervals</title>
+</head>
+
+<body>
+</body>
+<script>
+    function buzzer() {
+        console.log('BUZZZERRRRRRR......');
+    }
+
+    const setTime = setInterval(buzzer, 5000);
+    console.log(typeof setTime);
+
+
+    window.addEventListener('click', function () {
+        document.body.innerHTML = 'we the best YMCMB';
+        // HOW DO I STOP
+        clearInterval(setTime); // STOP THE TIME FROM RUNNING
+    })
+
+
+
+    function setImmediateTimeIntervals(funcToRun, ms) {
+        // Right away call that function
+        funcToRun();
+        // run a regular interval
+        return setInterval(funcToRun, ms);
+    }
+    setImmediateTimeIntervals(buzzer, 2000);
+
+
+    //////////////////////// DESTROYED //////////////////
+    function destroyed() {
+        document.body.innerHTML = `<p>DESTROYED....</p>`;
+    }
+
+    setInterval(destroyed, 2000);
+</script>
+
+</html>

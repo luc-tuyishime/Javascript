@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Objects.</title>
+</head>
+
+<body>
+    <input type="text" name="first" value="" />
+    <script>
+        const age = 100;
+        const person = {
+            age: age,
+            name: 'jean luc',
+            propertyToCheck: 'never',
+            sayHello: function (greeting = 'hey') {
+                console.log(`${greeting} ${this.name}`)
+            },
+        }
+
+        const propertyToCheck = prompt('Enter a value');
+        console.log(propertyToCheck);
+        console.log(person[propertyToCheck]);
+
+        const grabName = document.querySelector('[name="first"]');
+        const result = grabName ? grabName.value : '';
+        console.log(result);
+
+        const person1 = {
+            first: 'wes',
+            last: 'bos'
+        }
+
+        const person2 = {
+            first: 'wes',
+            last: 'bos'
+        }
+
+        const person3 = { ...person1 }
+    </script>
+</body>
+
+</html>
