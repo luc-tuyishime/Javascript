@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>For Loops</title>
+</head>
+
+<body>
+    <script>
+        const numbers = [2, 34, 3, 23, 42, 3, 1, 65, 364, 5, 645, 6];
+
+        const name = 'Wes Bos👪🏻🎅🏻👩‍👩‍👧‍👦';
+
+        const wes = {
+            name: 'wes',
+            age: 100,
+            cool: true
+        }
+
+        // for (let i = 0; i < numbers.length; i += 1) {
+        //     console.log(i);
+        // }
+
+
+        // FOR OF
+        for (num of numbers) {
+            if (num > 364) {
+                console.log(num)
+            } else {
+                console.log('here we are');
+            }
+            // console.log(num);
+        }
+
+        // FOR IN - USED FOR LOOPING OVER KEYS OF AN OBJECT
+        for (prop in wes) {
+            console.log(prop);
+        }
+
+        const baseHumanStats = {
+            feet: 2,
+            arms: 2,
+            eyes: 2,
+            head: 1
+        };
+
+        function human(name) {
+            this.name = name;
+        }
+
+        human.prototype = baseHumanStats;
+
+        console.log('here huan', human.prototype)
+
+        const wes2 = new human('wes');
+
+        console.log(Object.entries(wes2));
+
+        for (const props in wes2) {
+            console.log(props);
+        }
+
+    </script>
+</body>
+
+</html>

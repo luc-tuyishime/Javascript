@@ -1,0 +1,8 @@
+const video = document.querySelector('.webcam');
+const canvas = document.querySelector('.video');
+const ctx = canvas.getContext('2d'); // where we do the drawing
+
+const faceCanvas = document.querySelector('.race');
+const faceCtx = canvas.getContext('2d');
+const faceDetector = new FaceDetector();
+console.log(video, canvas, faceCanvas, faceDetector);

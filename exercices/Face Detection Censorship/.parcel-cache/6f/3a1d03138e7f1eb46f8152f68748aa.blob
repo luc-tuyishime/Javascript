@@ -1,0 +1,32 @@
+const video = document.querySelector('.webcam');
+const canvas = document.querySelector('.video');
+const ctx = canvas.getContext('2d'); // where we do the drawing
+
+const faceCanvas = document.querySelector('.face');
+const faceCtx = canvas.getContext('2d');
+const faceDetector = new window.FaceDetector(); // write a function that populate the users video
+
+async function populateVideo() {
+  // grab feed of user webcam.
+  const stream = await navigator.mediaDevices.getUserMedia({
+    video: {
+      width: 1280,
+      height: 720
+    }
+  });
+  video.srcObject = stream;
+  await video.play(); // because play take a second or minutes to play that's why we put await
+  // Size the canvas to be the same size as the video
+
+  canvas.width = video.videoWidth;
+  canvas.height = video.videoHeight;
+  faceCanvas.width = video.videoWidth;
+  faceCanvas.height = video.videoHeight;
+}
+
+async function detect() {
+  const faces = await faceDetector.detect();
+  console.log(faces);
+}
+
+populateVideo().then(detect);
